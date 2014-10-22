@@ -23,7 +23,7 @@ class SeleniumTest(unittest.TestCase):
         return results.find_element_by_tag_name('a')
 
     def findsearchfield(self):
-        return self.browser.find_element_by_name("q")
+        return self.browser.find_element_by_name("q1")
 
     def test_gapcon_in_title(self):
         self.search('gapCon 2014')

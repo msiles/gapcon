@@ -7,6 +7,7 @@ from selenium import webdriver
 
 class SeleniumTest(unittest.TestCase):
 
+    #Page Title Validation
     def test_gapcon_in_title(self):
         self.browser = webdriver.Firefox()
         self.browser.implicitly_wait(5)
@@ -19,6 +20,7 @@ class SeleniumTest(unittest.TestCase):
 
         self.browser.quit()
 
+    #Search Title Validation
     def test_google_searchfield(self):
         self.browser = webdriver.Firefox()
         self.browser.implicitly_wait(5)

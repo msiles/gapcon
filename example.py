@@ -49,7 +49,7 @@ class SauceSampleTest(unittest.TestCase):
         self.driver.implicitly_wait(30)
 
     def test_sauce(self):
-        self.driver.get('http://saucelabs.com/test/guinea-pig')
+        self.driver.get('http://saucelabs.com/tests/gufinea-pig')
         assert "I am a page title - Sauce Labs" in self.driver.title
         comments = self.driver.find_element_by_id('comments')
         comments.send_keys('Hello! I am some example comments.'
