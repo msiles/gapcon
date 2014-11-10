@@ -4,6 +4,7 @@ __author__ = 'moisessiles'
 from commons.testBase import TestBase
 from pages.home import HomePage
 
+
 class HomeTests(TestBase):
 
     def test_search_verification(self):

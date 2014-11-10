@@ -1,18 +1,12 @@
-#!/usr/bin/env python
-# This Source Code Form is subject to the terms of the Mozilla Public
-# License, v. 2.0. If a copy of the MPL was not distributed with this
-# file, You can obtain one at http://mozilla.org/MPL/2.0/.
-
 from selenium.webdriver.common.by import By
-
 from page import Page
-#from pages.login import LoginPage
 
 
 class BasePage(Page):
 
     _page_title_locator = (By.CSS_SELECTOR, "h1.page-title")
     _login_link_locator = (By.CSS_SELECTOR, "#logindisplay>a")
+    _about_tab_locator = (By.CSS_SELECTOR, ".last>a")
 
 
     #@property
@@ -31,4 +25,3 @@ class BasePage(Page):
     def go_to_login_page(self):
         welement = self.selenium.find_element(*self._login_link_locator)
         welement.click()
- #       return LoginPage

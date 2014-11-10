@@ -30,5 +30,5 @@ class HomePage(BasePage):
         welement = self.selenium.find_element(*self._view_upcoming_locator)
         welement.click()
 
-        return UpcommingDinnersPage
+        return UpcommingDinnersPage()
 
