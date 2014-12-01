@@ -22,3 +22,12 @@ class LoginPage(BasePage):
         wbutton.click()
 
 
+    def login_successful(self, username, password):
+        wlogin = self.selenium.find_element(*self._login_field_locator)
+        wpassword = self.selenium.find_element(*self._password_field_locator)
+        wbutton = self.selenium.find_element(*self._login_button_locator)
+
+        wlogin.send_keys(username)
+        wpassword.send_keys(password)
+
+        wbutton.click()
