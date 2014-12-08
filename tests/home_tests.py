@@ -2,18 +2,20 @@ __author__ = 'moisessiles'
 
 
 from commons.testBase import TestBase
-from pages.utils import Utilities
+from pages.home import HomePage
 
 
 class HomeTests(TestBase):
 
     def test_search_verification(self):
-        home_pg = Utilities.open_home_page(self.selenium)
+        home_pg = HomePage(self.selenium)
+        home_pg.go_to_home_page()
         home_pg.execute_search("San Jose")
         assert home_pg._page_title == "Nerd Dinner", "Title do not match"
 
-    def test_upcoming_dinners_access(self):
-        home_pg = Utilities.open_home_page(self.selenium)
-        upcoming_pg = home_pg.click_view_upcoming()
+    def test_upcomming_dinners_access(self):
+        home_pg = HomePage(self.selenium)
+        home_pg.go_to_home_page()
+        upcomming_pg = home_pg.click_view_upcoming()
 
-        assert upcoming_pg._page_title == "Upcoming Nerd Dinners", "Title do not match"
+        assert upcomming_pg._page_title == "Upcomming Nerd Dinners", "Title do not match"

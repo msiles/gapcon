@@ -13,6 +13,10 @@ class HomePage(BasePage):
     _view_upcoming_locator = (By.CSS_SELECTOR, ".search-text>strong>a")
     _page_title = u"Nerd Dinner"
 
+    def go_to_home_page(self):
+        self.selenium.get("http://nerddinner.com")
+        self.is_the_current_page
+
     def execute_search(self, search_value):
         welement = self.selenium.find_element(*self._search_locator)
 
@@ -27,3 +31,4 @@ class HomePage(BasePage):
         welement.click()
 
         return UpcommingDinnersPage(self)
+
