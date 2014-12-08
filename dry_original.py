@@ -9,7 +9,7 @@ class SeleniumTest(unittest.TestCase):
 
     #Page Title Validation
     def test_gapcon_in_title(self):
-        self.browser = webdriver.Firefox()
+        self.browser = webdriver.Chrome()
         self.browser.implicitly_wait(5)
         self.browser.get('http://google.com')
         q = self.browser.find_element_by_name("q")
@@ -22,7 +22,7 @@ class SeleniumTest(unittest.TestCase):
 
     #Search Title Validation
     def test_google_searchfield(self):
-        self.browser = webdriver.Firefox()
+        self.browser = webdriver.Chrome()
         self.browser.implicitly_wait(5)
         self.browser.get('http://google.com')
         self.browser.find_element_by_name("q")

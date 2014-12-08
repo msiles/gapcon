@@ -8,8 +8,8 @@ from selenium import webdriver
 class SeleniumTest(unittest.TestCase):
 
     def setUp(self):
-        self.browser = webdriver.Firefox()
-        self.browser.implicitly_wait(5)
+        self.browser = webdriver.Chrome()
+        self.browser.implicitly_wait(10)
         self.browser.get('http://google.com')
 
     def tearDown(self):
@@ -23,7 +23,7 @@ class SeleniumTest(unittest.TestCase):
         return results.find_element_by_tag_name('a')
 
     def findsearchfield(self):
-        return self.browser.find_element_by_name("q1")
+        return self.browser.find_element_by_name("q")
 
     def test_gapcon_in_title(self):
         self.search('gapCon 2014')
