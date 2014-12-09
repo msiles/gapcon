@@ -25,10 +25,12 @@ class SeleniumTest(unittest.TestCase):
     def findsearchfield(self):
         return self.browser.find_element_by_name("q")
 
+    #Page Title Validation
     def test_gapcon_in_title(self):
         self.search('gapCon 2014')
         assert 'gapCon 2014' in self.browser.title
 
+    #Search Title Validation
     def test_google_searchfield(self):
         q = self.findsearchfield()
         assert q.is_displayed()

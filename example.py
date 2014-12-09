@@ -15,14 +15,23 @@ browsers = [{"platform": "Mac OS X 10.9",
              "browserName": "chrome",
              "version": "31"},
             {"platform": "Windows 8.1",
-             "browserName": "internet explorer",
-             "version": "11"},
-            {"platform": "Mac OS X 10.9",
              "browserName": "firefox",
-             "version": "10"},
+             "version": "33"}
+            ]
+
+browsersWin = [{"platform": "Mac OS X 10.9",
+             "browserName": "chrome",
+             "version": "31"},
+            {"platform": "Windows 8.1",
+             "browserName": "firefox",
+             "version": "33"},
+            {"platform": "Windows 7",
+             "browserName": "firefox",
+             "version": "33"},
             {"platform": "Windows XP",
-             "browserName": "internet explorer",
-             "version": "6"}]
+             "browserName": "firefox",
+             "version": "33"}
+]
 
 
 def on_platforms(platforms):
@@ -36,7 +45,7 @@ def on_platforms(platforms):
     return decorator
 
 
-@on_platforms(browsers)
+@on_platforms(browsersWin)
 class SauceSampleTest(unittest.TestCase):
     def setUp(self):
         self.desired_capabilities['name'] = self.id()
@@ -49,7 +58,7 @@ class SauceSampleTest(unittest.TestCase):
         self.driver.implicitly_wait(30)
 
     def test_sauce(self):
-        self.driver.get('http://saucelabs.com/tests/gufinea-pig')
+        self.driver.get('https://saucelabs.com/test/guinea-pig')
         assert "I am a page title - Sauce Labs" in self.driver.title
         comments = self.driver.find_element_by_id('comments')
         comments.send_keys('Hello! I am some example comments.'

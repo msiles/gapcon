@@ -3,6 +3,7 @@ __author__ = 'moisessiles'
 from base import BasePage
 from selenium.webdriver.common.by import By
 
+
 class LoginPage(BasePage):
 
     _login_field_locator = (By.ID, "UserName")
@@ -12,6 +13,7 @@ class LoginPage(BasePage):
     _page_title = u"Log On"
     _summary_error = (By.CSS_SELECTOR, ".validation-summary-errors>span")
     _welcome_user = (By.CSS_SELECTOR, "#logindisplay>b")
+    _password_required = (By.CSS_SELECTOR, ".field-validation-error>span")
 
     def login_as_wrong_user(self):
         self.selenium.implicitly_wait(10) # seconds
@@ -43,4 +45,9 @@ class LoginPage(BasePage):
     def error_message(self):
         self.selenium.implicitly_wait(10) # seconds
         error_message = self.selenium.find_element(*self._summary_error)
+        return error_message.text
+
+    def password_required_message(self):
+        self.selenium.implicitly_wait(10) # seconds
+        error_message = self.selenium.find_element(*self._password_required)
         return error_message.text
