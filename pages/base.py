@@ -1,5 +1,6 @@
 from selenium.webdriver.common.by import By
-from page import Page
+
+from pages.page import Page
 
 
 class BasePage(Page):

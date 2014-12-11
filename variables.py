@@ -1,9 +1,6 @@
 __author__ = 'msiles'
-from selenium import webdriver
 
 
-_protocol = "https"
-#_url = "dev-big-play.azure-mobile.net"
-_url = "preview-big-play.azure-mobile.net"
-
-_testing_url = "{}://{}/api/" .format(_protocol, _url)
+testing_url = "http://nerddinner.com"
+test_username = "moises.siles@gmail.com"
+test_password = "123456"
