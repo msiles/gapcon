@@ -4,7 +4,6 @@ import os
 import sys
 import new
 import unittest
-import variables as var
 from selenium import webdriver
 from sauceclient import SauceClient
 
